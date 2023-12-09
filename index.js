@@ -1,5 +1,5 @@
 function webview(url){
-  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.open("GET", "webview.js", true);
   xhttp.send();
   
   const webpage = (url) => {
