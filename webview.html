@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>Webview</title>
 </head>
 <body>
-<script type="module">
-function webview(url){
-  xhttp.open("GET", "webview.js", true);
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Request data</button>
+<p id="demo"></p>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "demo_get.asp", true);
   xhttp.send();
-  
-  const webpage = (url) => {
-  return url;
-};
-  
-export default webpage;
-  
 }
-  webview("https://turbowarp.org");
 </script>
 </body>
 </html>
